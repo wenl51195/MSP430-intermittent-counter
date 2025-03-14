@@ -1,7 +1,7 @@
 # Intermittent Counter on MSP430FR4133
 
 ## Overview
-This is a simple intermittent counter program running on MSP430FR4133 microcontrollers. The program increments a counter every second and saves its value to FRAM while indicating its status through an LED. Use FRAM to save the counter value when the power is off. The counter will resume counting from that value when the power is restored.
+This is a simple intermittent counter program running on MSP430FR4133 microcontroller. The program increments a counter every second and saves its value to FRAM while indicating its status through an LED. Use FRAM to save the counter value when the power is off. The counter will resume counting from that value when the power is restored.
 
 ## Features
 - 16-bit counter implementation
