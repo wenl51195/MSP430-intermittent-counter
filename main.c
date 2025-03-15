@@ -9,8 +9,7 @@ unsigned long *FRAM_read_ptr;
 #define FRAM_TEST_START 0x1800
 
 // Calculate odd parity for a 16-bit value
-unsigned char CheckCounter(unsigned int value)
-{
+unsigned char CheckCounter(unsigned int value) {
     unsigned char parity = 0;
     while (value) {
         parity ^= (value & 1);
