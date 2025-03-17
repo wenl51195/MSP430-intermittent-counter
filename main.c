@@ -21,7 +21,7 @@ unsigned char CheckCounter(unsigned int value) {
 // Restore the counter value from FRAM
 unsigned int RestoreCounter() {
     unsigned int data = *FRAM_write_ptr1;
-	return data;
+    return data;
 }
 
 void FRAMWrite(void) {
@@ -37,7 +37,7 @@ void FRAMRead(void) {
     unsigned char read_parity = data & 0xFF;
     unsigned int read_counter = data >> 8;
     unsigned char calc_parity = CheckCounter(read_counter);
-	
+    
     if (read_parity == calc_parity) {
         counter = read_counter;
     } else {
@@ -55,13 +55,13 @@ void main(void) {
     PM5CTL0 &= ~LOCKLPM5;                   // Disable the GPIO power-on default high-impedance mode
                                             // to activate previously configured port settings
     
-	// Initialize FRAM read/write pointers
+    // Initialize FRAM read/write pointers
     FRAM_write_ptr = (unsigned long *)FRAM_TEST_START;
     FRAM_write_ptr1 = FRAM_write_ptr + 1;
     FRAM_read_ptr = FRAM_write_ptr;
-	
-	FRAMRead();
-	
+
+    FRAMRead();
+
     while(1) {
         P1OUT ^= BIT0;                      // Toggle P1.0 using exclusive-OR
         counter++;
