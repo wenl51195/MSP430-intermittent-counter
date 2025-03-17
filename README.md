@@ -36,7 +36,7 @@ The program implements a simple error detection and recovery mechanism:
 
 ## Usage Process
 1. Open the project in CCS and configure the project for device
-2. Compile and download the code to an MSP430FR4133 microcontroller
+2. Compile and download the code to the MSP430FR4133 microcontroller
 2. Upon startup, the program reads the previous counter value from FRAM
 3. The counter increments by 1 every second and is saved to FRAM
 4. The LED blinks once per second to indicate system operation
