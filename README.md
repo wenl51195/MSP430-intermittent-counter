@@ -14,9 +14,7 @@ This is a simple intermittent counter program running on MSP430FR4133 microcontr
 - LED connected to pin P1.0
 - Code Composer Studio (CCS)
 
-## Software Architecture
-The code includes the following main components:
-
+## Code Structure
 1. **FRAM Operations**:
    - `FRAMWrite()`: Writes counter value to FRAM with parity check
    - `FRAMRead()`: Reads counter value from FRAM and performs parity verification
@@ -33,10 +31,3 @@ The program implements a simple error detection and recovery mechanism:
 - Calculates parity bit for counter value
 - Verifies parity bit during read operations
 - Recovers counter value from backup location if an error is detected
-
-## Usage Process
-1. Open the project in CCS and configure the project for device
-2. Compile and download the code to the MSP430FR4133 microcontroller
-2. Upon startup, the program reads the previous counter value from FRAM
-3. The counter increments by 1 every second and is saved to FRAM
-4. The LED blinks once per second to indicate system operation
